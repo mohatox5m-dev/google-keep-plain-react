@@ -1,48 +1,29 @@
-function NoteList({ notes, deleteNote }) {
+import Icon from "./Icon";
+import NoteCard from "./NoteCard";
 
-    if (!notes || notes.length === 0) {
-
-        return (
-            <div className="empty-notes">
-                <div className="empty-icon">💡</div>
-                <p>Notes you add appear here</p>
-            </div>
-
-        );
-
-    }
-
+function NoteList({ notes, onUpdate, onDelete, darkMode = false }) {
+  if (!notes || notes.length === 0) {
     return (
-        <div className="notes-grid">
-
-            {notes.map((note) => (
-                <div className="note-card" key={note.id}>
-
-                    {note.title && <h3>{note.title}</h3>}
-
-                    <p>{note.text}</p>
-
-                    <div className="card-actions">
-                        <span>🔔</span>
-                        <span>🎨</span>
-
-                        <button
-
-                            className="delete-btn"
-
-                            onClick={() => deleteNote(note.id)}
-                        >
-
-                            🗑️
-                        </button>
-                    </div>
-                </div>
-
-            ))}
-        </div>
-
+      <div className="empty-notes">
+        <Icon name="lightbulb" className="empty-icon" />
+        <p>Notes you add appear here</p>
+      </div>
     );
+  }
 
+  return (
+    <div className="notes-grid">
+      {notes.map((note) => (
+        <NoteCard
+          key={note.id}
+          note={note}
+          onUpdate={onUpdate}
+          onDelete={onDelete}
+          darkMode={darkMode}
+        />
+      ))}
+    </div>
+  );
 }
 
 export default NoteList;

@@ -1,35 +1,28 @@
-function AsideBar() {
+import Icon from "./Icon";
 
-    return (
-        <aside className="aside-bar">
-            <div className="aside-item active">
-                <span>💡</span>
-                <span className="aside-text">Notes</span>
-            </div>
+const NAV_ITEMS = [
+  { id: "notes", icon: "lightbulb", label: "Notes", active: true },
+  { id: "reminders", icon: "notifications", label: "Reminders" },
+  { id: "labels", icon: "edit", label: "Edit labels" },
+  { id: "archive", icon: "archive", label: "Archive" },
+  { id: "trash", icon: "delete", label: "Trash" },
+];
 
-            <div className="aside-item">
-                <span>🔔</span>
-                <span className="aside-text">Reminders</span>
-            </div>
-
-            <div className="aside-item">
-                <span>✏️</span>
-                <span className="aside-text">Edit labels</span>
-            </div>
-
-            <div className="aside-item">
-                <span>📦</span>
-                <span className="aside-text">Archive</span>
-            </div>
-
-            <div className="aside-item">
-                <span>🗑️</span>
-                <span className="aside-text">Trash</span>
-            </div>
-        </aside>
-
-    );
-
+function AsideBar({ collapsed }) {
+  return (
+    <aside className={`aside-bar ${collapsed ? "aside-collapsed" : ""}`}>
+      {NAV_ITEMS.map((item) => (
+        <div
+          key={item.id}
+          className={`aside-item ${item.active ? "active" : ""}`}
+          title={collapsed ? item.label : undefined}
+        >
+          <Icon name={item.icon} />
+          <span className="aside-text">{item.label}</span>
+        </div>
+      ))}
+    </aside>
+  );
 }
 
 export default AsideBar;
