@@ -1,0 +1,720 @@
+* {
+
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+body {
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: #202124;
+
+  background: white;
+
+}
+
+.app {
+
+  min-height: 100vh;
+
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+.navbar {
+
+  height: 64px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 8px 20px;
+
+  border-bottom: 1px solid #e0e0e0;
+
+  position: sticky;
+
+  top: 0;
+
+  background: white;
+
+  z-index: 100;
+
+}
+
+.logo-area {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  min-width: 230px;
+
+}
+
+.menu-icon {
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+}
+
+.keep-logo {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+}
+
+.keep-logo h2 {
+
+  font-weight: 500;
+
+  color: #5f6368;
+
+}
+
+.bulb {
+
+  font-size: 28px;
+
+}
+
+/* ---------------- SEARCH ---------------- */
+
+.search-bar {
+
+  max-width: 720px;
+
+  width: 100%;
+
+  background: #f1f3f4;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 12px 18px;
+
+  border-radius: 8px;
+
+}
+
+.search-bar input {
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  width: 100%;
+
+  margin-left: 15px;
+
+  font-size: 16px;
+
+}
+
+/* ---------------- NAV ICONS ---------------- */
+
+.nav-icons {
+
+  display: flex;
+
+  gap: 20px;
+
+  margin-left: auto;
+
+  font-size: 20px;
+
+}
+
+/* ---------------- BODY ---------------- */
+
+.app-body {
+
+  display: flex;
+
+}
+
+/* ---------------- SIDEBAR ---------------- */
+
+.aside-bar {
+
+  width: 250px;
+
+  min-height: calc(100vh - 64px);
+
+  padding-top: 10px;
+
+}
+
+.aside-item {
+
+  height: 48px;
+
+  padding: 0 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  border-radius: 0 25px 25px 0;
+
+  cursor: pointer;
+
+}
+
+.aside-item:hover {
+
+  background: #f1f3f4;
+
+}
+
+.aside-item.active {
+
+  background: #feefc3;
+
+}
+
+/* ---------------- MAIN ---------------- */
+
+.main-content {
+
+  flex: 1;
+
+  padding: 35px;
+
+  min-width: 0;
+
+}
+
+/* ---------------- NOTE INPUT ---------------- */
+
+.note-input {
+
+  max-width: 600px;
+
+  margin: 0 auto 40px;
+
+  padding: 15px;
+
+  border-radius: 8px;
+
+  border: 1px solid #dadce0;
+
+  box-shadow:
+
+    0 1px 2px rgba(60, 64, 67, 0.3),
+
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+
+}
+
+.note-input input,
+
+.note-input textarea {
+
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  resize: none;
+
+}
+
+.title-input {
+
+  font-weight: bold;
+
+  margin-bottom: 15px;
+
+}
+
+.note-input textarea {
+
+  min-height: 70px;
+
+}
+
+.note-actions {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+}
+
+.action-icons {
+
+  display: flex;
+
+  gap: 18px;
+
+}
+
+.note-actions button {
+
+  border: none;
+
+  background: transparent;
+
+  padding: 10px 20px;
+
+  cursor: pointer;
+
+  font-weight: 500;
+
+}
+
+/* ---------------- NOTES ---------------- */
+
+.notes-grid {
+
+  column-count: 4;
+
+  column-gap: 16px;
+
+}
+
+.note-card {
+
+  width: 100%;
+
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  border: 1px solid #dadce0;
+
+  border-radius: 8px;
+
+  padding: 16px;
+
+  break-inside: avoid;
+
+}
+
+.note-card:hover {
+
+  box-shadow:
+
+    0 1px 2px rgba(60, 64, 67, 0.3),
+
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+
+}
+
+.note-card h3 {
+
+  margin-bottom: 10px;
+
+}
+
+.note-card p {
+
+  line-height: 1.5;
+
+  white-space: pre-wrap;
+
+}
+
+.card-actions {
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 20px;
+
+}
+
+.delete-btn {
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+}
+
+/* ---------------- EMPTY NOTES ---------------- */
+
+.empty-notes {
+
+  text-align: center;
+
+  color: #80868b;
+
+  margin-top: 100px;
+
+}
+
+.empty-icon {
+
+  font-size: 70px;
+
+  filter: grayscale(1);
+
+  opacity: 0.4;
+
+}
+
+.empty-notes p {
+
+  font-size: 20px;
+
+  margin-top: 15px;
+
+}
+
+/* ---------------- TABLET ---------------- */
+
+@media (max-width: 1000px) {
+
+  .notes-grid {
+
+    column-count: 3;
+
+  }
+
+  .aside-bar {
+
+    width: 80px;
+
+  }
+
+  .aside-text {
+
+    display: none;
+
+  }
+
+  .aside-item {
+
+    padding: 0;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    margin: 5px 15px;
+
+  }
+
+  .logo-area {
+
+    min-width: auto;
+
+  }
+
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 700px) {
+
+  .navbar {
+
+    gap: 10px;
+
+    padding: 8px 12px;
+
+  }
+
+  .keep-logo h2 {
+
+    display: none;
+
+  }
+
+  .nav-icons {
+
+    display: none;
+
+  }
+
+  .aside-bar {
+
+    display: none;
+
+  }
+
+  .main-content {
+
+    padding: 20px 12px;
+
+  }
+
+  .notes-grid {
+
+    column-count: 2;
+
+  }
+
+  .search-bar {
+
+    flex: 1;
+
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .notes-grid {
+
+    column-count: 1;
+
+  }
+
+  .search-bar {
+
+    padding: 10px;
+
+  }
+
+}
+
+/* =========================
+
+   RESPONSIVE DESIGN
+
+========================= */
+ 
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+  .notes-grid {
+
+    column-count: 3;
+
+  }
+ 
+  .aside-bar {
+
+    width: 70px;
+
+  }
+ 
+  .aside-text {
+
+    display: none;
+
+  }
+ 
+  .aside-item {
+
+    justify-content: center;
+
+    padding: 0;
+
+    margin: 6px 10px;
+
+    border-radius: 50%;
+
+  }
+ 
+  .logo-area {
+
+    min-width: auto;
+
+  }
+ 
+  .main-content {
+
+    padding: 25px 20px;
+
+  }
+
+}
+ 
+/* SMALL TABLET / LARGE PHONE */
+
+@media (max-width: 768px) {
+
+  .navbar {
+
+    height: auto;
+
+    min-height: 60px;
+
+    padding: 8px 10px;
+
+    gap: 10px;
+
+  }
+ 
+  .keep-logo h2 {
+
+    display: none;
+
+  }
+ 
+  .nav-icons {
+
+    display: none;
+
+  }
+ 
+  .aside-bar {
+
+    display: none;
+
+  }
+ 
+  .main-content {
+
+    padding: 20px 12px;
+
+  }
+ 
+  .search-bar {
+
+    flex: 1;
+
+    width: 100%;
+
+  }
+ 
+  .notes-grid {
+
+    column-count: 2;
+
+  }
+ 
+  .note-input {
+
+    max-width: 100%;
+
+  }
+
+}
+ 
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+  .navbar {
+
+    padding: 8px;
+
+  }
+ 
+  .logo-area {
+
+    gap: 10px;
+
+  }
+ 
+  .menu-icon {
+
+    font-size: 22px;
+
+  }
+ 
+  .bulb {
+
+    font-size: 22px;
+
+  }
+ 
+  .search-bar {
+
+    padding: 10px;
+
+  }
+ 
+  .search-bar input {
+
+    font-size: 14px;
+
+    margin-left: 8px;
+
+  }
+ 
+  .main-content {
+
+    padding: 15px 10px;
+
+  }
+ 
+  .note-input {
+
+    padding: 12px;
+
+    margin-bottom: 25px;
+
+  }
+ 
+  .action-icons {
+
+    gap: 10px;
+
+    font-size: 14px;
+
+  }
+ 
+  .note-actions button {
+
+    padding: 8px 10px;
+
+  }
+ 
+  .notes-grid {
+
+    column-count: 1;
+
+  }
+ 
+  .note-card {
+
+    margin-bottom: 12px;
+
+  }
+ 
+  .note-card h3 {
+
+    font-size: 17px;
+
+  }
+ 
+  .note-card p {
+
+    font-size: 14px;
+
+  }
+
+}
+ 
